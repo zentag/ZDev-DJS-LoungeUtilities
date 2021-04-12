@@ -6,6 +6,8 @@ const config = require("./config.json")
 global.botVersion = "1.0"
 global.qotdTime = "86400000"
 global.mode = "normal"
+global.openOpenQotd = false
+global.latestQotd = "No open QOTD"
 
 client.on('ready', async () => {
     console.log('ready')
