@@ -10,11 +10,11 @@ global.mode = "normal"
 client.on('ready', async () => {
     console.log('ready')
 
-    client.user.setActivity("#help", { type: "PLAYING"});
+    client.user.setActivity("$help", { type: "PLAYING"});
     new WOKCommands(client, {
         commandsDir: 'commands',
         featureDir: 'features'
-    }).setDefaultPrefix('#')
+    }).setDefaultPrefix('$')
 })
 
 if(mode == "testing"){
