@@ -1,0 +1,24 @@
+{
+  "name": "ZDev-DJS-LoungeUtilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zentag/ZDev-DJS-LoungeUtilities.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zentag/ZDev-DJS-LoungeUtilities/issues"
+  },
+  "homepage": "https://github.com/zentag/ZDev-DJS-LoungeUtilities#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "wokcommands": "^1.3.1"
+  }
+}
