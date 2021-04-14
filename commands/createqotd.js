@@ -18,7 +18,7 @@ module.exports = {
                 .setTitle("Todays QOTD: Answer with :white_check_mark: or :x:!")
                 .setDescription(`${qotd}`)
                 .setColor("0099ff")
-                .setFooter(`MoonBot v${botVersion}`)
+                .setFooter(`Lounge Utilities v${botVersion}`)
             qotdChannel.send(qotdEmbed).then(function (message) {
                 message.react("✅")
                 message.react("❌")
@@ -33,10 +33,10 @@ module.exports = {
             const qotd = qotdWithComma.replace(/,/g, " ")
             const qotdChannel = client.channels.cache.get("830958255156232202")
             const qotdEmbed = new Discord.MessageEmbed()
-                .setTitle("Todays QOTD: Answer with &qotd (answer) in any channel!")
+                .setTitle("Todays QOTD: Answer with $qotd (answer) in any channel!")
                 .setDescription(`${qotd}`)
                 .setColor("0099ff")
-                .setFooter(`MoonBot v${botVersion}`)
+                .setFooter(`Lounge Utilities v${botVersion}`)
             qotdChannel.send(qotdEmbed)
             global.latestQotd = qotd
         }
