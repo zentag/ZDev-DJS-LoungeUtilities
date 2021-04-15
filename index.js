@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
 
 
-global.botVersion = "1.1"
+global.botVersion = "1.2"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false

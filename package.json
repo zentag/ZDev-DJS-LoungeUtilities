@@ -19,7 +19,9 @@
   "homepage": "https://github.com/zentag/ZDev-DJS-LoungeUtilities#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
+    "got": "^11.8.2",
     "ms": "^2.1.3",
+    "random-puppy": "^1.1.0",
     "wokcommands": "^1.3.1"
   }
 }
