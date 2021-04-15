@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
-const config = require("./config.json")
+
 
 global.botVersion = "1.1"
 global.qotdTime = "86400000"
@@ -20,6 +20,7 @@ client.on('ready', async () => {
 })
 
 if(mode == "testing"){
+    const config = require("./config.json")
     client.login(config.testToken);
 }
 if(mode == "normal"){
