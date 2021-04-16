@@ -3,9 +3,11 @@ const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
 const info = require("./onStart/info")
+const mongo = require("./mongo")
+const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.6.4"
+global.botVersion = "1.7"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -21,7 +23,16 @@ client.on('ready', async () => {
     new WOKCommands(client, {
         commandsDir: 'commands',
         featureDir: 'features'
-    }).setDefaultPrefix('$')
+    }).setDefaultPrefix('$').setMongoPath(mongoPath)
+
+    await mongo().then(mongoose => {
+        try{
+            console.log("Connected to mongo!")
+        }
+        finally{
+            mongoose.connection.close()
+        }
+    })
 })
 
 if(mode == "testing"){
