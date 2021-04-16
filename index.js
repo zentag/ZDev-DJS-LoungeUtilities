@@ -2,9 +2,10 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
+const info = require("./onStart/info")
 
 
-global.botVersion = "1.6.2"
+global.botVersion = "1.6.3"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -15,6 +16,7 @@ client.on('ready', async () => {
     me.send("I have started!")
     console.log('ready')
     rules(client)
+    info(client)
     client.user.setActivity("$help", { type: "PLAYING"});
     new WOKCommands(client, {
         commandsDir: 'commands',
