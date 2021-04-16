@@ -4,13 +4,15 @@ const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
 
 
-global.botVersion = "1.6"
+global.botVersion = "1.6.2"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
 global.latestQotd = "No open QOTD"
 
 client.on('ready', async () => {
+    const me = await client.user.cache.get("521115847801044993")
+    me.send("I have started!")
     console.log('ready')
     rules(client)
     client.user.setActivity("$help", { type: "PLAYING"});
