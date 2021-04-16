@@ -7,7 +7,7 @@ const mongo = require("./mongo")
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.7"
+global.botVersion = "1.8"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
