@@ -4,7 +4,7 @@ const profileSchema = require('./schemas/profile-schema')
 module.exports = (client) => {
   client.on('message', (message) => {
     const { guild, member } = message
-    channel.messages.fetch({ limit: 2 }).then(messages => {
+    message.channel.messages.fetch({ limit: 2 }).then(messages => {
         global.sender = messages[1]
         console.log(sender)
       })
