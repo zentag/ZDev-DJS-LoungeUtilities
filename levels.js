@@ -8,7 +8,10 @@ module.exports = (client) => {
         global.sender = messages[1]
         console.log(sender)
       })
-    addXP(guild.id, member.id, 23, message)
+    if(!message.author.bot && message.channel.type == "dm"){
+        addXP(guild.id, member.id, 23, message)
+    }   
+    
   })
 }
 
