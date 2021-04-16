@@ -6,7 +6,7 @@ module.exports = async (client) => {
       .setDescription("[1] Be respectful to other members\n[2] Don't use any slurs\n[3] Don't spam\n[4] Keep discussion related to the channel\n[5] Only play *serious* music(e.g. don't rickroll someone)")
       .setTitle("Rules")
       .setColor("0099ff")
-      .setFooter("Lounge Utilities" + botVersion)
+      .setFooter("Lounge Utilities v" + botVersion)
     channel.messages.fetch().then((messages) => {
       if (messages.size === 0) {
         // Send a new message
