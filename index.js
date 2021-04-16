@@ -5,14 +5,14 @@ const rules = require("./onStart/rules")
 const info = require("./onStart/info")
 
 
-global.botVersion = "1.6.3"
+global.botVersion = "1.6.4"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
 global.latestQotd = "No open QOTD"
 
 client.on('ready', async () => {
-    const me = await client.user.cache.get("521115847801044993")
+    const me = await client.users.cache.get("521115847801044993")
     me.send("I have started!")
     console.log('ready')
     rules(client)
