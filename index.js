@@ -4,7 +4,7 @@ const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
 
 
-global.botVersion = "1.4"
+global.botVersion = "1.5"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
