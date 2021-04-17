@@ -7,7 +7,7 @@ module.exports = {
     callback: async ({ message }) => {
         console.log("test")
         const target = message.mentions.users.first() || message.author
-        const rank  = await profileSchema.findOne({ userID: target.id })
+        const rank  = await profileSchema.findOne({ userId: target.id })
         const rankEmbed = new Discord.MessageEmbed()
             .setTitle(`${target.tag}'s rank on this server`)
             .addField("Level", rank.level)
