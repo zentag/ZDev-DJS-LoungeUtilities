@@ -1,4 +1,4 @@
-const profileSchema = require('your directory to your schema');
+const profileSchema = require('../schemas/profile-schema');
 const Discord = require("discord.js")
 
 module.exports = {
