@@ -3,7 +3,7 @@ const profileSchema = require('./schemas/profile-schema')
 
 module.exports = (client) => {
     client.on('message', (message) => {
-      if(message.channel.type !== "dm" && !message.author.bots){
+      if(message.channel.type !== "dm" && !message.author.bot){
         const { guild, member } = message
   
         addXP(guild.id, member.id, 23, message)
