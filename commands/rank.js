@@ -5,6 +5,7 @@ module.exports = {
     minArgs: 0,
     maxArgs: 1,
     callback: async ({ message }) => {
+        console.log("test")
         const rank  = await profileSchema.findOne({ userID: target.id })
         const target = message.mentions.users.first() || message.author
         const rankEmbed = new Discord.MessageEmbed()
@@ -13,5 +14,7 @@ module.exports = {
             .addField("XP", rank.xp)
             .setColor("0099ff")
         message.channel.send(rankEmbed)
+        console.log(rank.level)
+        console.log(rank.xp)
     }
 }
