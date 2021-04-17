@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 module.exports = {
     minArgs: 0,
     maxArgs: 1,
-    callback: ({ message }) => {
+    callback: async ({ message }) => {
         const rank  = await profileSchema.findOne({ userID: target.id })
         const target = message.mentions.users.first() || message.author
         const rankEmbed = new Discord.MessageEmbed()
