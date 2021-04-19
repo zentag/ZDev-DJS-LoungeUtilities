@@ -7,7 +7,7 @@ module.exports = {
     callback: async ({ message, client }) => {
         const args = message.content.split(" ")
         const target = args[1]
-        message.guild.fetchBans().then(bans=> {
+        message.guild.fetchBans().then(async bans => {
             
             global.bUser = await bans.find(b => b.user.id == target)
             
