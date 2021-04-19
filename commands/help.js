@@ -4,6 +4,7 @@ module.exports = {
     minArgs: 0,
     maxArgs: 1,
     callback: ({ message, args }) => {
+        let noArgs = false
         var commands = `Commands(do $help <command> to look at what it is.):`
         var files = fs.readdirSync("./commands")
         for( const file of files ){
@@ -11,7 +12,10 @@ module.exports = {
             const fullCommand = "$" + fileNameWithoutJS
             commands += `\n${fullCommand}`
         }
-        if(args.isNull()){
+        if(!args[0]){
+            noArgs = true
+        }
+        if(noArgs == false){
             const helpEmbed = new MessageEmbed()
                 .setColor("0099ff")
                 .setTitle("Help Menu")
@@ -20,7 +24,7 @@ module.exports = {
             message.channel.send(helpEmbed)
         }
         
-        if(!args[0]) return;
+        if(noArgs) return;
         if(args[0] == "ban"){
             const banEmbed = new MessageEmbed()
                 .setColor("0099ff")
