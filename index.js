@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require("Discord.js");
 const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
@@ -8,7 +8,7 @@ const levels = require('./levels')
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.12.2"
+global.botVersion = "1.12.3"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -49,7 +49,7 @@ client.on('message', message => {
 
     if(confirm) {
       const log = client.channels.cache.get("833832055636361228");
-      const logEmbed = new discord.MessageEmbed()
+      const logEmbed = new Discord.MessageEmbed()
             .setTitle(`${message.author.username}`)
             .setDescription(`Message: ${message.content}`)
 
