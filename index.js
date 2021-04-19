@@ -8,7 +8,7 @@ const levels = require('./levels')
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.12"
+global.botVersion = "1.12.2"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -41,6 +41,7 @@ client.on('message', message => {
     let confirm = false;
    
     var i;
+    const { badwords } = require("./data.json")
     for(i = 0;i < badwords.length; i++) {
       if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
         confirm = true;      
