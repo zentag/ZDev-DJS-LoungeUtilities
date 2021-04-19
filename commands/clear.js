@@ -3,7 +3,8 @@ module.exports = {
     maxArgs: 1,
     permissions: ['MANAGE_MESSAGES'],
     callback: ({ message, args }) => {
-        if (isNaN(args[0])) {
+        const input = args[0]
+        if (isNaN(input)) {
             return message.channel
               .send('enter the amount of messages that you would like to clear')
               .then((sent) => {
