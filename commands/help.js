@@ -15,16 +15,15 @@ module.exports = {
         if(!args[0]){
             noArgs = true
         }
-        if(noArgs == false){
+        if(noArgs == true){
             const helpEmbed = new MessageEmbed()
                 .setColor("0099ff")
                 .setTitle("Help Menu")
                 .setFooter(`Lounge Utilities v${botVersion}`)
                 .setDescription(commands)
             message.channel.send(helpEmbed)
+            return;
         }
-        
-        if(noArgs) return;
         if(args[0] == "ban"){
             const banEmbed = new MessageEmbed()
                 .setColor("0099ff")
