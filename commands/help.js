@@ -5,7 +5,7 @@ module.exports = {
     maxArgs: 0,
     callback: ({ message, args }) => {
         const commands = `Commands(do $help <command> to look at what it is.):`
-        var files = fs.readdirSync("../commands")
+        var files = fs.readdirSync("./")
         for( const file of files ){
             const fileNameWithoutJS = file.replace(".js", "")
             const fullCommand = "$" + fileNameWithoutJS
