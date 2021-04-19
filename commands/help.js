@@ -11,7 +11,7 @@ module.exports = {
             const fullCommand = "$" + fileNameWithoutJS
             commands += `\n${fullCommand}`
         }
-        if(args[0]){
+        if(args[0].isNull()){
             const helpEmbed = new MessageEmbed()
                 .setColor("0099ff")
                 .setTitle("Help Menu")
