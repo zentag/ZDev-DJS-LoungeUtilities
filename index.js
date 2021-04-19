@@ -8,7 +8,7 @@ const levels = require('./levels')
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.11.3"
+global.botVersion = "1.12"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -35,6 +35,27 @@ client.on('ready', async () => {
             mongoose.connection.close()
         }
     })
+})
+
+client.on('message', message => {
+    let confirm = false;
+   
+    var i;
+    for(i = 0;i < badwords.length; i++) {
+      if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+        confirm = true;      
+    }
+
+    if(confirm) {
+      const log = client.channels.cache.get("833832055636361228");
+      const logEmbed = new discord.MessageEmbed()
+            .setTitle(`${message.author.username}`)
+            .setDescription(`Message: ${message.content}`)
+
+      message.delete()
+      message.channel.send(`**${message.author}, you are not allowed to send that here! More warnings will result in a mute!**`)
+      log.send(logEmbed)
+    }    
 })
 
 if(mode == "testing"){
