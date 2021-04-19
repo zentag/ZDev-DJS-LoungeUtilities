@@ -6,7 +6,7 @@ module.exports = (client) => {
   client.on('guildMemberAdd', async (member) => {
     const { guild } = member
 
-    const channelId = "823745599270027295"
+    const channelId = "830958927674998815"
     if (!channelId) {
       return
     }
