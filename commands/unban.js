@@ -4,12 +4,12 @@ module.exports = {
     minArgs: 1,
     maxArgs: -1,
     permissions: ['BAN_MEMBERS'],
-    callback: ({ message, client }) => {
+    callback: async ({ message, client }) => {
         const args = message.content.split(" ")
         const target = args[1]
         message.guild.fetchBans().then(bans=> {
             
-            global.bUser = bans.find(b => b.user.id == target)
+            global.bUser = await bans.find(b => b.user.id == target)
             
         })
         if(!bUser){

@@ -8,7 +8,7 @@ const levels = require('./levels')
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.10.9"
+global.botVersion = "1.11"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
@@ -16,7 +16,6 @@ global.latestQotd = "No open QOTD"
 
 client.on('ready', async () => {
     const me = await client.users.cache.get("521115847801044993")
-    me.send("I have started!")
     console.log('ready')
     rules(client)
     info(client)

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/zentag/ZDev-DJS-LoungeUtilities#readme",
   "dependencies": {
+    "canvas": "^2.7.0",
     "discord.js": "^12.5.3",
     "got": "^11.8.2",
     "ms": "^2.1.3",
