@@ -11,12 +11,15 @@ module.exports = {
             const fullCommand = "$" + fileNameWithoutJS
             commands += `\n${fullCommand}`
         }
-        const helpEmbed = new MessageEmbed()
-            .setColor("0099ff")
-            .setTitle("Help Menu")
-            .setFooter(`Lounge Utilities v${botVersion}`)
-            .setDescription(commands)
-        message.channel.send(helpEmbed)
+        if(args[0]){
+            const helpEmbed = new MessageEmbed()
+                .setColor("0099ff")
+                .setTitle("Help Menu")
+                .setFooter(`Lounge Utilities v${botVersion}`)
+                .setDescription(commands)
+            message.channel.send(helpEmbed)
+        }
+        
         if(!args[0]) return;
         if(args[0] == "ban"){
             const banEmbed = new MessageEmbed()
@@ -145,6 +148,9 @@ module.exports = {
                 .setFooter(`Lounge Utilities v${botVersion}`)
                 .setDescription("Description: Displays your rank and xp\nUsage: $rank")
             message.channel.send(rankEmbed)
+        }
+        if(!(args[0] == "ban" || args[0] == "banlist" || args[0] == "clear" || args[0] == "closeqotd" || args[0] == "createqotd" || args[0] == "cute" || args[0] == "help" || args[0] == "kick" || args[0] == "meme" || args[0] == "mute" || args[0] == "qotd" || args[0] == "rank" || args[0] == "setqotd" || args[0] == "simjoin" || args[0] == "tempmute" || args[0] == "unban" || args[0] == "unmute")){
+            message.reply(":x: Error: invalid parameter. Example of command: $help meme :x:")
         }
     }   
 }

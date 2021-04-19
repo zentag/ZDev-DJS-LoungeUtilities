@@ -8,7 +8,7 @@ const levels = require('./levels')
 const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
-global.botVersion = "1.14.4"
+global.botVersion = "1.14.5"
 global.qotdTime = "86400000"
 global.mode = "normal"
 global.openOpenQotd = false
