@@ -16,6 +16,7 @@ global.latestQotd = "No open QOTD"
 
 client.on('ready', async () => {
     const me = await client.users.cache.get("521115847801044993")
+    me.send("Yes")
     console.log('ready')
     rules(client)
     info(client)
