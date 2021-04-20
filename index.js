@@ -5,7 +5,6 @@ const rules = require("./onStart/rules")
 const info = require("./onStart/info")
 const mongo = require("./mongo")
 const levels = require('./levels')
-const mongoPath = "mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority"
 
 
 global.botVersion = "1.14.6"
@@ -25,7 +24,7 @@ client.on('ready', async () => {
     new WOKCommands(client, {
         commandsDir: 'commands',
         featureDir: 'features'
-    }).setDefaultPrefix('$').setMongoPath(mongoPath)
+    }).setDefaultPrefix('$').setMongoPath(process.env['mongoPath'])
 
     await mongo().then(mongoose => {
         try{
@@ -64,5 +63,5 @@ if(mode == "testing"){
     client.login(config.testToken);
 }
 if(mode == "normal"){
-    client.login(process.env.token);
+    client.login(process.env['token']);
 }
