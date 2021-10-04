@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+require('dotenv').config()
 const client = new Discord.Client();
 const WOKCommands = require('wokcommands');
 const rules = require("./onStart/rules")
@@ -9,7 +10,7 @@ const levels = require('./levels')
 
 global.botVersion = "1.14.6"
 global.qotdTime = "86400000"
-global.mode = "normal"
+global.mode = "testing"
 global.openOpenQotd = false
 global.latestQotd = "No open QOTD"
 
@@ -24,7 +25,7 @@ client.on('ready', async () => {
     new WOKCommands(client, {
         commandsDir: 'commands',
         featureDir: 'features'
-    }).setDefaultPrefix('$').setMongoPath(process.env['mongoPath'])
+    }).setDefaultPrefix('$').setMongoPath("mongodb+srv://Infinity_Oofs:subtomeon_YT36021@cluster0.3y7dl.mongodb.net/loungeUtils?retryWrites=true&w=majority")
 
     await mongo().then(mongoose => {
         try{
@@ -60,7 +61,7 @@ client.on('message', message => {
 
 if(mode == "testing"){
     const config = require("./config.json")
-    client.login(config.testToken);
+    client.login("ODMwOTU4NDc3MDE3ODc0NDgy.YHOQYw.cc7sV5nMqG0ralbgVOshnB9ZVLo");
 }
 if(mode == "normal"){
     client.login(process.env['token']);
